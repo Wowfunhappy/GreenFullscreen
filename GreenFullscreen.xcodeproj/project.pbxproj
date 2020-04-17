@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20B950DE1B604EE10059EBDD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B950DD1B604EE10059EBDD /* Cocoa.framework */; };
+		20B950E71B604EE10059EBDD /* GreenFullscreen-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 20B950E61B604EE10059EBDD /* GreenFullscreen-Prefix.pch */; };
+		20B950E91B604EE10059EBDD /* GreenFullscreen-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20B950E81B604EE10059EBDD /* GreenFullscreen-Info.plist */; };
+		20B950EC1B604EE10059EBDD /* GreenFullscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B950EB1B604EE10059EBDD /* GreenFullscreen.m */; };
+		20B950EF1B604EE10059EBDD /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B950EE1B604EE10059EBDD /* JRSwizzle.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20B950DA1B604EE10059EBDD /* GreenFullscreen.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenFullscreen.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B950DD1B604EE10059EBDD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		20B950E01B604EE10059EBDD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		20B950E11B604EE10059EBDD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		20B950E21B604EE10059EBDD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		20B950E51B604EE10059EBDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B950E61B604EE10059EBDD /* GreenFullscreen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GreenFullscreen-Prefix.pch"; sourceTree = "<group>"; };
+		20B950E81B604EE10059EBDD /* GreenFullscreen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GreenFullscreen-Info.plist"; sourceTree = "<group>"; };
+		20B950EA1B604EE10059EBDD /* GreenFullscreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreenFullscreen.h; sourceTree = "<group>"; };
+		20B950EB1B604EE10059EBDD /* GreenFullscreen.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GreenFullscreen.m; sourceTree = "<group>"; tabWidth = 2; };
+		20B950ED1B604EE10059EBDD /* JRSwizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		20B950EE1B604EE10059EBDD /* JRSwizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20B950D71B604EE10059EBDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B950DE1B604EE10059EBDD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20B950D11B604EE10059EBDD = {
+			isa = PBXGroup;
+			children = (
+				20B950E31B604EE10059EBDD /* FFS */,
+				20B950DC1B604EE10059EBDD /* Frameworks */,
+				20B950DB1B604EE10059EBDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20B950DB1B604EE10059EBDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20B950DA1B604EE10059EBDD /* GreenFullscreen.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20B950DC1B604EE10059EBDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20B950DD1B604EE10059EBDD /* Cocoa.framework */,
+				20B950DF1B604EE10059EBDD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20B950DF1B604EE10059EBDD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20B950E01B604EE10059EBDD /* AppKit.framework */,
+				20B950E11B604EE10059EBDD /* CoreData.framework */,
+				20B950E21B604EE10059EBDD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		20B950E31B604EE10059EBDD /* FFS */ = {
+			isa = PBXGroup;
+			children = (
+				20B950E61B604EE10059EBDD /* GreenFullscreen-Prefix.pch */,
+				20B950E81B604EE10059EBDD /* GreenFullscreen-Info.plist */,
+				20B950EA1B604EE10059EBDD /* GreenFullscreen.h */,
+				20B950EB1B604EE10059EBDD /* GreenFullscreen.m */,
+				20B950ED1B604EE10059EBDD /* JRSwizzle.h */,
+				20B950EE1B604EE10059EBDD /* JRSwizzle.m */,
+				20B950E41B604EE10059EBDD /* Supporting Files */,
+			);
+			path = FFS;
+			sourceTree = "<group>";
+		};
+		20B950E41B604EE10059EBDD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				20B950E51B604EE10059EBDD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20B950D91B604EE10059EBDD /* GreenFullscreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B950F31B604EE10059EBDD /* Build configuration list for PBXNativeTarget "GreenFullscreen" */;
+			buildPhases = (
+				20B950D61B604EE10059EBDD /* Sources */,
+				20B950D71B604EE10059EBDD /* Frameworks */,
+				20B950D81B604EE10059EBDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GreenFullscreen;
+			productName = FuckYouFullScreen;
+			productReference = 20B950DA1B604EE10059EBDD /* GreenFullscreen.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20B950D21B604EE10059EBDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Jonathan;
+				TargetAttributes = {
+					20B950D91B604EE10059EBDD = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = 20B950D51B604EE10059EBDD /* Build configuration list for PBXProject "GreenFullscreen" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 20B950D11B604EE10059EBDD;
+			productRefGroup = 20B950DB1B604EE10059EBDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20B950D91B604EE10059EBDD /* GreenFullscreen */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20B950D81B604EE10059EBDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B950E91B604EE10059EBDD /* GreenFullscreen-Info.plist in Resources */,
+				20B950E71B604EE10059EBDD /* GreenFullscreen-Prefix.pch in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20B950D61B604EE10059EBDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B950EF1B604EE10059EBDD /* JRSwizzle.m in Sources */,
+				20B950EC1B604EE10059EBDD /* GreenFullscreen.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		20B950F11B604EE10059EBDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.11;
+			};
+			name = Debug;
+		};
+		20B950F21B604EE10059EBDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx10.11;
+			};
+			name = Release;
+		};
+		20B950F41B604EE10059EBDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "/Library/Application Support/SIMBL";
+				INFOPLIST_FILE = FFS/Info.plist;
+				INSTALL_PATH = /Plugins;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wowfunhappy.greenFullscreen;
+				PRODUCT_NAME = GreenFullscreen;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		20B950F51B604EE10059EBDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_POSTPROCESSING = YES;
+				DSTROOT = "/Library/Application Support/SIMBL";
+				INFOPLIST_FILE = FFS/Info.plist;
+				INSTALL_PATH = /Plugins;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wowfunhappy.greenFullscreen;
+				PRODUCT_NAME = GreenFullscreen;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20B950D51B604EE10059EBDD /* Build configuration list for PBXProject "GreenFullscreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B950F11B604EE10059EBDD /* Debug */,
+				20B950F21B604EE10059EBDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B950F31B604EE10059EBDD /* Build configuration list for PBXNativeTarget "GreenFullscreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B950F41B604EE10059EBDD /* Debug */,
+				20B950F51B604EE10059EBDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20B950D21B604EE10059EBDD /* Project object */;
+}
