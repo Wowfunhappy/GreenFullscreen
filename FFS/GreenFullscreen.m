@@ -13,9 +13,21 @@
 }
 
 - (BOOL)FFS_showsFullScreenButton {
-  [[self standardWindowButton:NSWindowZoomButton] setAction:@selector(wb_fullScreen)];
+  
+  NSButton *zoomButton = [self standardWindowButton:NSWindowZoomButton];
+  
+  [zoomButton setAction:@selector(wb_fullScreen)];
+  
+  if (self.collectionBehavior == NSWindowCollectionBehaviorFullScreenPrimary) {
+    [zoomButton setEnabled:YES];
+  }
+  else {
+    [zoomButton setEnabled:NO];
+  }
+  
   return NO;
 }
+
 @end
 
 @implementation FFS
@@ -46,8 +58,15 @@
     [[aWindow standardWindowButton:NSWindowZoomButton] setAction:@selector(wb_fullScreen)];
     
     NSButton *fullScreenButton = [aWindow standardWindowButton:NSWindowFullScreenButton];
-    
     [fullScreenButton setHidden:YES];
+    
+    NSButton *zoomButton = [aWindow standardWindowButton:NSWindowZoomButton];
+    if (aWindow.collectionBehavior == NSWindowCollectionBehaviorFullScreenPrimary) {
+      [zoomButton setEnabled:YES];
+    }
+    else {
+      [zoomButton setEnabled:NO];
+    }
     
   }
 }

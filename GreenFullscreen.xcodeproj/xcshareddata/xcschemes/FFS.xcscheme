@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20B950D91B604EE10059EBDD"
-               BuildableName = "FFS.bundle"
+               BuildableName = "GreenFullscreen.bundle"
                BlueprintName = "GreenFullscreen"
                ReferencedContainer = "container:GreenFullscreen.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20B950D91B604EE10059EBDD"
-            BuildableName = "FFS.bundle"
+            BuildableName = "GreenFullscreen.bundle"
             BlueprintName = "GreenFullscreen"
             ReferencedContainer = "container:GreenFullscreen.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20B950D91B604EE10059EBDD"
-            BuildableName = "FFS.bundle"
+            BuildableName = "GreenFullscreen.bundle"
             BlueprintName = "GreenFullscreen"
             ReferencedContainer = "container:GreenFullscreen.xcodeproj">
          </BuildableReference>
