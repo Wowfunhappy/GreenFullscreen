@@ -1,38 +1,58 @@
 //
-//  FFS.m
-//  FFS
+//  GFS.m
+//  GFS
 //
 //
 
 #import "GreenFullscreen.h"
 
-@implementation NSWindow (FFS)
+@implementation NSWindow (GFS)
 
-- (void)wb_fullScreen {
-  [self toggleFullScreen:self];
-}
-
-- (BOOL)FFS_showsFullScreenButton {
+- (void)cleanUpWindow {
+  [[self standardWindowButton:NSWindowFullScreenButton] setHidden:YES];
   
   NSButton *zoomButton = [self standardWindowButton:NSWindowZoomButton];
-  
   [zoomButton setAction:@selector(wb_fullScreen)];
-  
   if (self.collectionBehavior == NSWindowCollectionBehaviorFullScreenPrimary) {
     [zoomButton setEnabled:YES];
   }
   else {
     [zoomButton setEnabled:NO];
   }
-  
-  return NO;
+}
+
+- (id)GFS_init {
+  [self cleanUpWindow];
+  return [self GFS_init];
+}
+
+- (void)wb_fullScreen {
+  [self toggleFullScreen:self];
+}
+
+- (void)GFS_windowDidExitFullScreen {
+  [self cleanUpWindow];
+  [self GFS_windowDidExitFullScreen];
+}
+
+- (BOOL)GFS_showsFullScreenButton {
+  [self cleanUpWindow];
+  return false;
 }
 
 @end
 
-@implementation FFS
+
+@implementation NSWindowController (GFS)
+  - (void)GFS_windowDidLoad {
+    [self.window cleanUpWindow];
+    [self GFS_windowDidLoad];
+  }
+@end
+
+@implementation GFS
 + (void)load {
-  FFS *controller = [FFS sharedInstance];
+  GFS *controller = [GFS sharedInstance];
   [controller swizzle];
 }
 
@@ -47,27 +67,20 @@
 
 - (void)swizzle {
   NSError *error = nil;
-  [NSWindow jr_swizzleMethod:@selector(showsFullScreenButton) withMethod:@selector(FFS_showsFullScreenButton) error:&error];
+  
+  [NSWindow jr_swizzleMethod:@selector(init) withMethod:@selector(GFS_init) error:&error];
+  
+  [NSWindow jr_swizzleMethod:@selector(showsFullScreenButton) withMethod:@selector(GFS_showsFullScreenButton) error:&error];
+  
+  [NSWindowController jr_swizzleMethod:@selector(windowDidLoad) withMethod:@selector(GFS_windowDidLoad) error:&error];
   
   if (error) {
-    NSLog(@"Unable to swizzle showsFullScreenButton: %@", error);
+    NSLog(@"Unable to swizzle: %@", error);
   }
   
   NSArray *windows = [NSApp windows];
   for (NSWindow *aWindow in windows) {
-    [[aWindow standardWindowButton:NSWindowZoomButton] setAction:@selector(wb_fullScreen)];
-    
-    NSButton *fullScreenButton = [aWindow standardWindowButton:NSWindowFullScreenButton];
-    [fullScreenButton setHidden:YES];
-    
-    NSButton *zoomButton = [aWindow standardWindowButton:NSWindowZoomButton];
-    if (aWindow.collectionBehavior == NSWindowCollectionBehaviorFullScreenPrimary) {
-      [zoomButton setEnabled:YES];
-    }
-    else {
-      [zoomButton setEnabled:NO];
-    }
-    
+    [aWindow cleanUpWindow];
   }
 }
 
