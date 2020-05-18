@@ -21,11 +21,6 @@
   }
 }
 
-- (id)GFS_init {
-  [self cleanUpWindow];
-  return [self GFS_init];
-}
-
 - (void)wb_fullScreen {
   [self toggleFullScreen:self];
 }
@@ -67,8 +62,6 @@
 
 - (void)swizzle {
   NSError *error = nil;
-  
-  [NSWindow jr_swizzleMethod:@selector(init) withMethod:@selector(GFS_init) error:&error];
   
   [NSWindow jr_swizzleMethod:@selector(showsFullScreenButton) withMethod:@selector(GFS_showsFullScreenButton) error:&error];
   
