@@ -11,7 +11,7 @@
 - (void)GFS_display {
   NSButton *zoomButton = [self standardWindowButton:NSWindowZoomButton];
   [zoomButton setAction:@selector(wb_fullScreen)];
-  if (self.collectionBehavior == NSWindowCollectionBehaviorFullScreenPrimary) {
+  if ([self GFS_showsFullScreenButton] == true) {
     [zoomButton setEnabled:YES];
   }
   else {
