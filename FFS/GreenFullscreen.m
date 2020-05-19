@@ -9,8 +9,6 @@
 @implementation NSWindow (GFS)
 
 - (void)GFS_display {
-  [[self standardWindowButton:NSWindowFullScreenButton] setHidden:YES];
-  
   NSButton *zoomButton = [self standardWindowButton:NSWindowZoomButton];
   [zoomButton setAction:@selector(wb_fullScreen)];
   if (self.collectionBehavior == NSWindowCollectionBehaviorFullScreenPrimary) {
@@ -24,6 +22,10 @@
 
 - (void)wb_fullScreen {
   [self toggleFullScreen:self];
+}
+
+- (BOOL)GFS_showsFullScreenButton {
+  return false;
 }
 
 @end
@@ -47,10 +49,17 @@
   NSError *error = nil;
   
   [NSWindow jr_swizzleMethod:@selector(update) withMethod:@selector(GFS_display) error:&error];
+  [NSWindow jr_swizzleMethod:@selector(showsFullScreenButton) withMethod:@selector(GFS_showsFullScreenButton) error:&error];
   
   if (error) {
     NSLog(@"Unable to swizzle: %@", error);
   }
+  
+  NSArray *windows = [NSApp windows];
+  for (NSWindow *aWindow in windows) {
+    [[aWindow standardWindowButton:NSWindowFullScreenButton] setHidden:YES];
+  }
+  
 }
 
 @end
