@@ -23,6 +23,8 @@ void removeZoomMenuItems(NSMenu *menu) {
 @implementation GFS_NSWindow
 
 - (void)update {
+	ZKOrig(void);
+	
 	NSButton *zoomButton = [self standardWindowButton:NSWindowZoomButton];
 	[zoomButton setAction:@selector(toggleFullscreen)];
 	
@@ -35,7 +37,8 @@ void removeZoomMenuItems(NSMenu *menu) {
 		[zoomButton setEnabled:NO];
 	}
 	
-	ZKOrig(void);
+	// For apps that create NSMenus in an ususual way, namely Firefox.
+	removeZoomMenuItems([[[NSApp mainMenu]itemWithTitle:NSLocalizedString(@"Window", nil)] submenu]);
 }
 
 - (void)toggleFullscreen {
@@ -51,29 +54,10 @@ void removeZoomMenuItems(NSMenu *menu) {
 
 
 
-@interface GFS_NSApplication : NSApplication
-@end
-
-
-@implementation GFS_NSApplication
-
-- (void)setWindowsMenu:(NSMenu *)menu {
-	ZKOrig(void, menu);
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		removeZoomMenuItems(menu);
-	});
-}
-
-@end
-
-
-
-
 @implementation NSObject (main)
 
 + (void)load {
 	ZKSwizzle(GFS_NSWindow, NSWindow);
-	ZKSwizzle(GFS_NSApplication, NSApplication);
 	
 	NSArray *windows = [NSApp windows];
 	for (NSWindow *aWindow in windows) {
